@@ -1,0 +1,22 @@
+{
+  "name": "HelloWorld Collections",
+  "short_name": "HelloWorld",
+  "description": "A simple archive of all my old projects from school and college days. These repositories may be small or basic, but I’m keeping them here for nostalgia and reference.",
+  "start_url": "/helloworld-collections",
+  "display": "standalone",
+  "background_color": "#101010",
+  "theme_color": "#b7ab98",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["utility", "productivity", "archives", "education"]
+}
