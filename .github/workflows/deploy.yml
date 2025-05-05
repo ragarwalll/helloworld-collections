@@ -1,0 +1,118 @@
+name: Build & Deploy Static Snapshots to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write     # needed to push to gh-pages
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Install wget
+        run: sudo apt-get update && sudo apt-get install -y wget
+
+      - name: Prepare output directory
+        run: |
+          rm -rf static-site
+          mkdir static-site
+
+      - name: Mirror PHP projects with wget
+        run: |
+          set -e
+          declare -A projects=(
+            ["birthday-mailer-bomb"]="birthday-mailer-bomb"
+            ["college-major-project"]="college-major-project"
+            ["college-minor-project"]="college-minor-project"
+            ["el-arte"]="el-arte"
+            ["rotaractheritage"]="rotaractheritage"
+            ["socialnetwork-php"]="socialnetworking-php"
+          )
+
+          for key in "${!projects[@]}"; do
+            path=${projects[$key]}
+            port=$((8000 + RANDOM % 1000))
+            dest="static-site/$key"
+
+            echo ">>> Starting PHP server for $key on port $port"
+            php -S 127.0.0.1:$port -t "$path" >/dev/null 2>&1 &
+            pid=$!
+            sleep 2
+
+            echo ">>> wget mirror → $dest"
+            mkdir -p "$dest"
+            wget \
+              --mirror \
+              --page-requisites \
+              --adjust-extension \
+              --convert-links \
+              --no-parent \
+              --default-page=index.php \
+              --retry-connrefused \
+              --wait=1 \
+              -nH \
+              --cut-dirs=0 \
+              --directory-prefix="$dest" \
+              "http://127.0.0.1:$port/" || true
+
+            # Overwrite any index.html with the mirrored version
+            find "$dest" -type f -name "*.php.html" -print0 \
+              | xargs -0 -r -n1 bash -c \
+                'mv -f "$0" "${0%.php.html}.html"' || true
+
+            # Clean up any leftover .php.html files
+            find "$dest" -type f -name "*.php.html" -delete || true
+
+            # Fix links in all HTML files (if any)
+            find "$dest" -type f -name "*.html" -print0 \
+              | xargs -0 -r sed -i 's/\.php\.html/\.html/g' || true
+
+            kill $pid
+          done
+
+
+      - name: Build & Copy NPM static apps
+        run: |
+          # image-preview-with-file-uploader
+          cd image-preview-with-file-uploader
+          npm install
+          npm run build
+          cd ..
+          mkdir -p static-site/image-preview-with-file-uploader
+          cp -r image-preview-with-file-uploader/dist/* \
+            static-site/image-preview-with-file-uploader/
+
+      - name: Copy Django static directory
+        run: |
+          SRC="socialnetwork-django/static"
+          DST="static-site/socialnetwork-django/static"
+          if [ -d "$SRC" ]; then
+            mkdir -p "$DST"
+            cp -r "$SRC/"* "$DST/"
+          else
+            echo "No static/ directory found in socialnetwork-django—skipping"
+          fi
+
+      - name: Copy hub site into static-site root
+        run: |
+          cp -r docs/* static-site/
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./static-site
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com

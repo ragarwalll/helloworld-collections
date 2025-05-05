@@ -27,9 +27,6 @@ jobs:
           - name: image-preview
             path: image-preview-with-file-uploader
             type: npm
-          - name: ipa-installer
-            path: ipa-installer
-            type: npm
           - name: rotaract-heritage
             path: rotaractheritage
             type: php
