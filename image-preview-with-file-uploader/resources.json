@@ -1,11 +1,7 @@
 {
     "resources": [
         {
-            "name": "i18n/i18n.properties",
-            "raw": "i18n/i18n.properties"
-        },
-        {
-            "name": "manifest.json"
+            "name": "Component.js"
         },
         {
             "name": "model/models.js"
@@ -14,7 +10,7 @@
             "name": "controller/App.controller.js"
         },
         {
-            "name": "Component.js"
+            "name": "manifest.json"
         },
         {
             "name": "manifest-bundle.zip"
@@ -26,6 +22,10 @@
         {
             "name": "model/models-dbg.js",
             "isDebug": true
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
         },
         {
             "name": "controller/App-dbg.controller.js",
