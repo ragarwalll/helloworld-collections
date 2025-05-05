@@ -1,14 +1,10 @@
 {
     "resources": [
         {
-            "name": "Component-preload.js",
-            "merged": true
+            "name": "manifest.json"
         },
         {
             "name": "model/models.js"
-        },
-        {
-            "name": "manifest.json"
         },
         {
             "name": "controller/App.controller.js"
@@ -20,15 +16,19 @@
             "name": "manifest-bundle.zip"
         },
         {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
             "name": "i18n/i18n.properties",
             "raw": "i18n/i18n.properties"
         },
         {
             "name": "controller/App-dbg.controller.js",
-            "isDebug": true
-        },
-        {
-            "name": "model/models-dbg.js",
             "isDebug": true
         },
         {
