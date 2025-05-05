@@ -4,10 +4,6 @@
             "name": "manifest.json"
         },
         {
-            "name": "i18n/i18n.properties",
-            "raw": "i18n/i18n.properties"
-        },
-        {
             "name": "model/models.js"
         },
         {
@@ -22,6 +18,10 @@
         {
             "name": "Component-preload.js",
             "merged": true
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
         },
         {
             "name": "model/models-dbg.js",
@@ -49,6 +49,9 @@
         },
         {
             "name": "css/style.css"
+        },
+        {
+            "name": "logo.png"
         },
         {
             "name": "index.html"
