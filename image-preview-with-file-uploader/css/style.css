@@ -1,0 +1,20 @@
+ .hiddenControls {
+     height: 0px;
+     overflow: hidden;
+ }
+ 
+ .imagePreview {
+     text-align: center;
+     color: #0854a0;
+ }
+ 
+ .actionIcon {
+     opacity: 0;
+ }
+ 
+ .imagePreview:hover .actionIcon {
+     opacity: 1;
+     transition: all 0.1s ease-in;
+     z-index: 9999;
+     transform: scale(1.2);
+ }

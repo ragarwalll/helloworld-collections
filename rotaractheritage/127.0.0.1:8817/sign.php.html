@@ -1,0 +1,141 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.png" />
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="js/w3sort.js"></script>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/preloader.js"></script>
+    <title>Rotaract | THA</title>
+  </head>
+  <body>
+    <div class="spinner-wrapper" id="loader">
+        <div class="spinner"></div>
+    </div>
+    <!--- Preload End-->
+    <section class="cover">
+        <div class="container">
+        <nav>
+            <input type="checkbox" id="nav" class="hidden">
+            <label for="nav" class="nav-btn">
+                <i id="bar"></i>
+                <i id="bar"></i>
+                <i id="bar"></i>
+            </label>
+             
+            <div class="nav-wrapper" id="nav__">
+              <ul>
+                  <li><a href="javascript: void(0);" id="na">About us</a></li>
+                  <li><a href="index.html" id="na">Home</a></li>
+                  <li><a href="login.php.html" id="na">Sign In/Sign Up</a></li>
+                  <li><a href="events.html" id="na">Events</a></li>
+                  <li><a href="members.html" id="na">Board Members</a></li>
+                  <li><a href="https://www.rotasiagoa2019.com/" id="na" target="_blank">Rotasia Goa 2019</a></li>
+                  <li><a href="contact.html" id="na">Contact Us</a></li>
+              </ul>
+          </div>
+          <div class="nav-wrapper" id="nav__aboutus">
+              <ul>
+                  <li><a href="overview.html" id="na">Rotaract Overview</a></li>
+                  <li><a href="history.html" id="na">Rotaract History</a></li>
+                  <!--<li><a href="" id="na">Standard Rotaract Consitution</a></li>-->
+                  <li><a href="https://www.rsamdio.org/" id="na" target="_blank">MDIO - RSAMDIO</a></li>
+                  <li><a href="https://www.rotary.org/" id="na" target="_blank">Rotaract International</a></li>
+                  
+                  <li><a onclick="backtoit();" id="na">back</a></li>
+              </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    
+    <!--
+    <script>
+      var nav = document.querySelectorAll("#na")
+      for(i=0;i<nav.length;i++){
+      $(nav[i]).click(function(){
+        $('input[type="checkbox"]:checked').prop('checked',false);
+      });}
+    </script>-->
+    <script>
+      var ul = document.getElementById("nav__").getElementsByTagName('ul');
+      var aboutus = document.getElementById("nav__aboutus");
+      $(aboutus).hide();
+      for (var i = 0; i < ul.length; i++) {
+        ul[i].addEventListener('click', clickHandler)
+      }
+
+      function clickHandler(e) {
+        if(e.target.innerHTML == "About us"){
+          $(ul).hide();
+          $(aboutus).show();
+        }
+      }
+
+      function backtoit(){
+        $(aboutus).hide();
+        $(ul).show();
+      }
+    </script>
+
+<script type="text/javascript" src="js/ajax_newaccount_email.js"></script>
+<div class="form new-form">
+      <a href="sign.php.html#" class="previous round hide">&#8249;</a>
+      <h3 id="area">Digital Literacy Programme</h3>
+      <h2 id="log">Sign Up<br></h2>
+
+        <h2 id="new-details">for your DLP account</h2>
+        <div class="input">
+          <div class="email">
+            <form action="sign.php.html" method="POST">
+                <input type="text" name="first_name" autocomplete="off" placeholder="Enter your first name" class="user fname" />
+                <div class="line user1"></div>
+                <input type="text" name="last_name" autocomplete="off" placeholder="Enter your last name" class="user lname" />
+                <div class="line user2"></div>
+                <input type="email" name="email" autocomplete="off" onkeyup="checkitemail();" placeholder="Enter your email" class="user usercheckemail mail" />
+                <div class="line user3"></div>
+                <div id="email_check"></div>
+                <input type="text" name="username" autocomplete="off" onkeyup="checkit();" placeholder="Enter your username" class="user usercheck name" id="set"  />
+                <div class="line user4"></div>
+                <div id="user_check"></div>
+                <input type="password" name="password" class="pass pass1" placeholder="Enter your password" />
+                <div class="line user5"></div>
+                <span id="email_status" class="email_status"></span>
+              <div class="sign"><input type="submit" name="signup" class="final" style="position: absolute;float: right;bottom: 35px;right: 41px;" value="Sign Up"></div>
+            </form>
+          </div><!--Email-->
+        </div><!--Input--> 
+    </div><!--Form-->
+    <script type="text/javascript" src="js/ajax_newaccount.js"></script>
+    <script type="text/javascript" src="js/hover-sign.js"></script>
+    <script>
+        $('.sign').hide();
+        function check_details(){
+            var fname = document.querySelector(".fname").value;
+            var lname = document.querySelector(".lname").value;
+            var pass = document.querySelector(".pass1").value;
+            email=document.querySelector('#email_check').innerHTML;
+            username=document.querySelector('#user_check').innerHTML;
+            success="OK";
+            if(email==success && username=="OK    " && fname && lname && pass){
+                $('.sign').fadeIn();
+            }  
+            else{
+                $('.sign').fadeOut();
+            }
+        }
+        setInterval(function() 
+        {
+            check_details();
+        },2500)
+    </script>
+    
