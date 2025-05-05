@@ -5,10 +5,10 @@
             "merged": true
         },
         {
-            "name": "manifest.json"
+            "name": "model/models.js"
         },
         {
-            "name": "model/models.js"
+            "name": "manifest.json"
         },
         {
             "name": "controller/App.controller.js"
@@ -24,11 +24,11 @@
             "raw": "i18n/i18n.properties"
         },
         {
-            "name": "model/models-dbg.js",
+            "name": "controller/App-dbg.controller.js",
             "isDebug": true
         },
         {
-            "name": "controller/App-dbg.controller.js",
+            "name": "model/models-dbg.js",
             "isDebug": true
         },
         {

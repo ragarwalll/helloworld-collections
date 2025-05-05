@@ -36,7 +36,7 @@
               <ul>
                   <li><a href="javascript: void(0);" id="na">About us</a></li>
                   <li><a href="index.html" id="na">Home</a></li>
-                  <li><a href="login.php.html" id="na">Sign In/Sign Up</a></li>
+                  <li><a href="login.html" id="na">Sign In/Sign Up</a></li>
                   <li><a href="events.html" id="na">Events</a></li>
                   <li><a href="members.html" id="na">Board Members</a></li>
                   <li><a href="https://www.rotasiagoa2019.com/" id="na" target="_blank">Rotasia Goa 2019</a></li>
@@ -87,27 +87,57 @@
       }
     </script>
 
+
 <script>
 $("body").css({"background": "#fff"});
 </script>
-<script type="text/javascript" src="js/ajax.js"></script>
-
-<div class="form">
-      <h3 id="area">Rotaract</h3><br>
-      <h2 id="log">Enter your<br></h2>
+ <script>
+      window.onload = function() {
+        var name = localStorage.getItem("email");
+        var status = localStorage.getItem("email_status");
+          if (name !== null){
+            $('#set').val(name);
+          }
+          if (status !== null){
+            $( '#email_status' ).html(status);
+          }
+        }
+      </script>
+      <script type="text/javascript" src="js/ajax.js"></script>
+    <div class="form">
+      <a href="login.html#" class="previous round hide">&#8249;</a>
+      <h3 id="area">Rotaract</h3>
+      <h2 id="log">Sign In<br></h2>
 
-        <h2 id="new-details">username for Rotaract account</h2>
+        <h2 id="new-details">with your Rotaract account</h2>
         <div class="input">
           <div class="email">
-            <form action="forgot.php.html" method="POST">
-              <div class="username"><br>
+            <form action="login.html" method="POST">
+              <div class="username">
                 <input type="text" name="user_login" autocomplete="off" onkeyup="checkit();" placeholder="Enter your username" class="user" id="set"  />
+                <input type="password" name="password_login" class="pass hidden" placeholder="Enter your password" />
                 <span id="email_status" class="email_status"></span>
                 <div class="line"></div>
-              </div><!--Username--><br><br><br>
-              <input type="submit" name="login" class="final" style="float: right" value="Send Link">   
+                <div class="pass_status hide"></div>
+              </div><!--Username-->
+              <div class="lining">
+                <button class="next" href="" type="button">Next</button>
+                <div class="centerit">
+                  <a class="newpass" href="forgot.html" >forgot password?</a></div>
+              </div><!--lining-->
+              <input type="submit" name="login" class="final hide" style="float: right" value="Login">   
+              <div class="new-acc">
+                <a class="newpass" href="sign.html">Don't have a account? Sign Up</a>
+              </div>
             </form> 
           </div><!--Email-->
         </div><!--Input-->
     </div><!--Form-->
-    <script src="js/hover-forget.js"></script>
+    <script src="js/hover-email.js"></script>
+    <script>
+      window.onbeforeunload = function() {
+        localStorage.setItem("email", $('.user').val());
+        localStorage.setItem("email_status", document.querySelector("#email_status").innerHTML);
+      }
+    </script>
+    
