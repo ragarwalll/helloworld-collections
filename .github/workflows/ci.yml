@@ -1,0 +1,104 @@
+# File: .github/workflows/ci.yml
+name: CI - build all sub-projects
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - name: birthday-mailer
+            path: birthday-mailer-bomb
+            type: php
+          - name: college-major
+            path: college-major-project
+            type: php
+          - name: college-minor
+            path: college-minor-project
+            type: php
+          - name: el-arte
+            path: el-arte
+            type: php
+          - name: image-preview
+            path: image-preview-with-file-uploader
+            type: npm
+          - name: ipa-installer
+            path: ipa-installer
+            type: npm
+          - name: rotaract-heritage
+            path: rotaractheritage
+            type: php
+          - name: socialnetwork-django
+            path: socialnetwork-django
+            type: python
+          - name: socialnetwork-php
+            path: socialnetworking-php
+            type: php
+    name: Build ${{ matrix.project.name }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP (if needed)
+        if: matrix.project.type == 'php'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+      
+      - name: Composer install (if composer.json exists)
+        if: matrix.project.type == 'php'
+        run: |
+          cd ${{ matrix.project.path }}
+          if [ -f composer.json ]; then
+            composer install --no-progress --no-suggest --prefer-dist
+          fi
+
+      - name: PHP lint / syntax check
+        if: matrix.project.type == 'php'
+        run: |
+          cd ${{ matrix.project.path }}
+          find . -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Set up Node.js (if needed)
+        if: matrix.project.type == 'npm'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install & build (npm)
+        if: matrix.project.type == 'npm'
+        run: |
+          cd ${{ matrix.project.path }}
+          npm i
+          npm run build
+
+      - name: Set up Python (if needed)
+        if: matrix.project.type == 'python'
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies (python)
+        if: matrix.project.type == 'python'
+        run: |
+          cd ${{ matrix.project.path }}
+          if [ -f requirements.txt ]; then
+            pip install --upgrade pip
+            pip install -r requirements.txt
+          fi
+
+      - name: Django check / tests
+        if: matrix.project.type == 'python'
+        run: |
+          cd ${{ matrix.project.path }}
+          python manage.py check
+          # you can add your test command here, e.g.:
+          # python manage.py test
+
+      - name: Done
+        run: echo "✅ Build for ${{ matrix.project.name }} complete"
