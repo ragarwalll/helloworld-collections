@@ -1,0 +1,104 @@
+.main-nav
+  position: absolute
+  top: 0
+  right: 0
+  font-size: 1.1em
+  flex: auto
+  margin-top: 1.3em
+  margin-right: 2em
+  z-index: 1
+  @media (max-width: 1290px)
+    position: absolute
+    background: $accent
+    margin: 0
+    top: 0
+    right: 0
+    left: 100%
+    font-size: 1.2em
+    overflow: hidden
+    transition: all ease-in-out 250ms
+    //transition-delay: 2s
+    &.is-open
+      left: 0
+
+
+  ul
+    display: flex
+    flex-direction: row
+    border: none
+    text-align: right
+    justify-content: space-around
+    @media (max-width: 1290px)
+      display: flex
+      flex-direction: column
+      border: none
+      text-align: center
+      height: 100vh
+
+
+  li
+    text-align: right
+    display: flex
+    @media (max-width: 1290px)
+      flex: 1 1 auto
+      border-bottom: 1px solid rgba(0, 0, 0, .15)
+      display: flex
+
+  a
+    color: $text-inverse
+    text-decoration: none
+    justify-content: flex-end
+    flex-basis: auto
+    align-items: center
+    display: flex
+    padding-right: 1em
+    padding-left: 1em
+    &:hover
+      background: rgba(0, 0, 0, .10)
+      @media (min-width: 1290px)
+        background: none
+        color: darken($text-inverse, 15%)
+
+    @media (max-width: 1290px)
+      color: $text-inverse
+      text-decoration: none
+      flex-basis: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      &:hover
+        background: rgba(0, 0, 0, .10)
+
+.nav-toggle
+  display: block
+  padding: 1em
+  position: absolute
+  right: 1em
+  top: 1.5em
+  cursor: pointer
+  z-index: 2
+  @media (min-width: 1290px)
+    display: none
+
+.hamburger, .hamburger::before, .hamburger::after
+  content: ''
+  display: block
+  width: 2em
+  height: 3px
+  background: $white
+  transition: all ease-in-out 250ms
+
+.hamburger::before
+  transform: translateY(-6px)
+
+.hamburger::after
+  transform: translateY(3px)
+
+.hamburger.is-open
+  transform: rotate(45deg)
+
+  &::after
+    transform: rotate(-90deg) translate(3px)
+
+  &::before
+    opacity: 0

@@ -1,0 +1,162 @@
+#wrapper
+  margin-left: auto
+  margin-right: auto
+  width: 800px
+  height: auto
+  border-left: 1px solid  #DCE5EE
+  border-right: 1px solid  #DCE5EE
+  padding-left: 10px
+  padding-right: 10px
+  @media (max-width: 800px)
+    width: auto
+
+.textHeader
+  background-color: #f3f6f9
+  width: 190px
+  height: 35px
+  padding: 5px
+  border-bottom: 1px solid #dce5ee
+  font-weight: 600
+
+.profileLeftSideContent
+  width: 194px
+  padding-right: 0px
+  padding-bottom: 5px
+  padding-top: 5px
+  padding-left: 0px
+  height: auto
+  min-height: 200px
+  text-align: justify
+
+.postForm
+  float: right
+  width: 560px
+  height: 170px
+  background-color: #f3f6f9
+  padding: 5px
+
+.profilePosts
+    float: right
+    width: 560px
+    height: auto
+    background-color: #f7f7f7
+    padding: 5px
+    text-align: justify
+
+.newsfeed
+  position: relative
+  background-color: #ffffff
+  border: 1px solid #F3F6F9
+  padding: 0.6em
+  transition: all ease-in-out 250ms
+  border-radius: 10px
+  &:hover
+    background-color: #F3F6F9
+    border: 1px solid #F3F6F9
+  &.close
+    display: none
+
+hr
+  background-color: #dce5ee
+  height: 1px
+  border: 0px
+
+
+.posted_by
+  font-weight: $font-bold
+  float: left
+
+.datediv
+  font-weight: $font-light
+  font-size: 0.8em
+  color: #000
+
+.posted_by a
+  font-weight: $font-bold
+  color: #048ca8
+  text-decoration: none
+  position: absolute
+  padding-left: 0.5em
+
+#by_user
+  color: #048ca8
+  text-decoration: none
+  //position: absolute
+  //padding-left: 0.9em
+#comment_dp
+  display: inline
+  margin-left: 0.3em
+
+.comment_body
+  display: inline-block
+  background: #F3F6F9
+  border: 7px solid #F3F6F9
+  border-radius: 18px
+  position: relative
+  top: -0.5em
+
+#normal
+  width: auto
+  border-radius: 18px
+  background: #F3F6F9
+  text-decoration: none
+  border: solid #F3F6F9
+  border-top: solid #F3F6F9
+  resize: none
+  overflow-y: hidden
+  color: $main
+  &::placeholder
+    padding-top: 0.5em
+    padding-left: 0.5em
+  @media (max-width: 760px)
+    width: 400px
+  @media (max-width: 570px)
+    width: 300px
+  @media (max-width: 480px)
+    width: 200px
+  @media (max-width: 370px)
+    width: 150px
+#normal:focus
+  outline: none
+  padding-top: 0.3em
+  padding-left: 0.5em
+.btn_like
+  padding: 0
+  border: 0
+  background-color: inherit
+  cursor: pointer
+  color: inherit
+.btn_comment
+  padding: 0
+  border: 0
+  background-color: inherit
+  cursor: pointer
+  color: inherit
+  &:hover
+    text-decoration: underline
+
+#by_user
+  font-size: 15px
+  &:hover
+    text-decoration: underline
+
+.comment_body span
+  font-size: 14px
+  //width: auto
+.posted_by span
+  font-weight: $font-light
+  font-size: 0.8em
+  color: #000
+  padding-left: 0.7em
+
+.actual_post
+  width: auto
+  //@media(max-width: 450px)
+    width: 300px
+  //@media(max-width: 350px)
+    width: 250px
+
+.posted_by a:hover
+  font-weight: 800
+  color: #16da93
+  text-decoration: underline

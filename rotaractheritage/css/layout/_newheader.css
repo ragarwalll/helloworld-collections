@@ -1,0 +1,14 @@
+.nav-toggle {
+  display: block;
+  padding: 1em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  cursor: pointer;
+}
+
+@media (min-width: 725px) {
+  .nav-toggle {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+.btn
+  display: inline-block
+  padding: .50em 1em
+  text-transform: uppercase
+  text-decoration: none
+
+.btnn
+  display: inline-block
+  padding: .50em 1em
+  text-transform: uppercase
+  text-decoration: none
+  margin-bottom: 0.5em
+
+.msg, .poke
+  font-size: 0.85em
+
+.btn--primary
+  background: $accent
+  color: $text-inverse
+  border: 2px solid $accent
+  &:hover,
+  &:focus
+    background:  darken($accent, 15%)
+
+.btn--secondary
+  border: 2px solid white
+  background: transparent
+  color: white
+  margin-bottom: 10px
+  
+  &:hover,
+  &:focus
+    background: white
+    color: $text-main
+  @media (min-width: 440px)
+    margin-right: 10px
+.icon
+  position: absolute
+  margin-left: 5px
+  margin-top: 3px

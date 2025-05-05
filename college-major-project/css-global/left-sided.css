@@ -1,0 +1,52 @@
+@font-face {
+    font-family: linux;
+    src: url(../fonts/linux.ttf);
+}
+.index{
+    float: left;
+    width: 20vw;
+    font-weight: 500;
+    position: fixed;
+    height: 100vh;
+}
+@media screen and (max-width: 674px) {
+    .index{
+        display: none;
+    }
+    .index.show{
+        display: block;
+        float: none !important;
+        width: 100% !important;
+        animation: reveal 1s ease-in-out;
+    }
+}
+@keyframes reveal {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }    
+  }
+
+.back{
+    position: fixed;
+    bottom: 60px;
+    left: 25px;
+    transition: all ease-in-out 250ms;
+    opacity: 0.7;
+    z-index: 9999999;
+}
+.back i{
+    color: #55d6aa;
+}
+.back:hover{
+    opacity: 1;
+}
+.back:hover::after{
+    content: 'back';
+    margin-top: 5px;
+    color: #55d6aa;
+    transition: all ease-in-out 250ms;
+    font-weight: 800;
+}

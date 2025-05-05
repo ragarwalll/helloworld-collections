@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Eram Meerza",
+      "post" : "President",
+      "dp": "./assets/members/eram.jpg" 
+    },
+    {
+      "name": "Vasundhara Agarwal",
+      "post" : "Vice President",
+      "dp": "./assets/members/vasundhara.jpg" 
+    },
+    {
+      "name": "Shreya Singh",
+      "post" : "Club Administration",
+      "dp": "./assets/members/shreya.jpg" 
+    }
+  ]

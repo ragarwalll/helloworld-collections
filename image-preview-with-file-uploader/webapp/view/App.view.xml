@@ -1,0 +1,28 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns="sap.m"
+	controllerName="com.sap.image-preview-with-file-uploader.controller.App" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<VBox>
+							<items>
+								<u:FileUploader name="uploadFile" change="onChangeImage" id="fileUploader" class="hiddenControls" fileType="jpg,png,jpeg" sendXHR="true"/>
+								<Label labelFor="fileUploader-fu" id="fileUploader-label" class="hiddenControls"/>
+								<GenericTile class="imagePreview" press="onEditImage" id="image" scope="Actions" subheader="No Image Selected">
+									<tileContent>
+										<TileContent id="iconContent">
+											<content>
+												<sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://add" size="2em" id="actionIcon" class="actionIcon"/>
+											</content>
+										</TileContent>
+									</tileContent>
+								</GenericTile>
+							</items>
+						</VBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,4 @@
+DirectoryIndex initial.php
+
+
+SetEnv MYVAR http://127.0.0.1/miniProject/

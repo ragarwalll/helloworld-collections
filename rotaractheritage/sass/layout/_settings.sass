@@ -1,0 +1,123 @@
+.contact
+    position: relative
+    width: 450px
+    min-height: 500px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: #fff
+    overflow: hidden
+    padding: 48px 40px 36px
+    text-align: center
+    @media (max-width: 460px)
+        width: 90%
+        padding: 10px
+
+.contact__heading
+    font-size: 25px
+
+.contact__detail
+    font-size: 18px
+    text-align: center
+    color: #000
+    font-weight: 400
+
+.contact__input
+    outline: none
+    border: none
+    display: block
+    margin: 0 auto
+    width: 100%
+    border-bottom: 1px solid #c0c0c0
+    padding-top: 50px
+    &::placeholder
+        transition: all 0.3s
+
+.contact__message
+    overflow: hidden
+    resize: none
+    &::placeholder
+        font-family: 'Open Sans', sans-serif    
+
+.contact__final
+    background: #1a73e8
+    color: white
+    border: 2px solid #1a73e8
+    padding: .40em 1.5em
+    text-decoration: none
+    border-radius: 5px
+    font-weight: normal
+    font-size: 15px
+    font-family: 'Open Sans', sans-serif
+    cursor: pointer
+    font-weight: 500
+    transform: translateY(35px)
+
+.main-wrapper2
+    margin-left: auto
+    margin-right: auto
+    width: 80vw
+    height: auto
+    border-left: 1px solid #DCE5EE
+    border-right: 1px solid #DCE5EE
+    padding-left: 10px
+    padding-right: 10px
+    padding-top: 2vw
+    @media (max-width: 674px)
+        width: auto !important
+
+.level
+    text-align: left  !important
+    box-sizing: unset !important
+    position: relative
+    padding: 30px 20px 50px 20px
+    margin: 25px
+    display: inline-block
+    height: 100px
+    width: 350px
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) 
+    transition: all 150ms ease-in-out
+    @media (max-width: 460px)
+        max-width: 65vw
+
+.level:hover
+    transform: scale(1.1)
+    transition: all 150ms ease-in-out
+
+.levels
+    text-align: center
+
+.begin--svg
+    position: absolute
+    top: 1.25rem
+    right: 1rem
+    width: 3rem
+    height: 3rem
+    border-radius: 100%
+
+.icon--svg
+    height: inherit
+    margin: auto
+    display: block
+    color: #ffffff
+    width: 1.75rem
+
+
+.beginner
+    border-top: 6px solid #69639a
+
+
+.intermediate
+    border-top: 6px solid #4c7ef3  
+
+.advanced
+    border-top: 6px solid #6df0c2
+
+#level
+    all: unset
+    cursor: pointer
+    color: rgb(85, 26, 139)
+
+.left-align
+    text-align: left

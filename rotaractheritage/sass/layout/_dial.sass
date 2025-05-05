@@ -1,0 +1,189 @@
+$tiber: #09383E
+$elephant: #0C383E
+$white: #fff
+    
+.overveiw__container__item 
+  margin: 0 auto 40px
+
+
+.overview__landing-page-container 
+  width: 100%
+  min-height: 100%
+  height: 100vh
+  background-image: url("../assets/img/bg.png")
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: bottom
+  overflow: hidden
+  font-family: 'Montserrat', sans-serif
+  color: #09383E
+  background-attachment: fixed
+
+
+.overview__content__wrapper 
+  max-width: 1200px
+  width: 90%
+  height: 100%
+  margin: 0 auto
+  position: relative
+   
+    
+.ellipses-container 
+  width: 27rem
+  height: 27rem
+  border-radius: 50%
+  margin: 0 auto
+  position: relative
+  top: 4.80rem
+  @media (max-width: 600px)
+      width: 22rem
+      height: 22rem
+      top: 8rem
+  @media (max-width: 450px)
+      width: 18rem
+      height: 18rem
+      top: 10rem
+  @media (max-width: 350px)
+      width: 16rem
+      height: 16rem
+      top: 11rem
+  @media (max-width: 318px)
+      width: 14rem
+      height: 14rem
+      top: 12.5rem
+  @media (max-width: 268px)
+      width: 11.5rem
+      height: 11.5rem
+      top: 14rem
+
+.ellipses 
+  border-radius: 50%
+  position: absolute
+  top: 0
+  border-style: solid
+
+
+.ellipses__outer--thin 
+  width: 100%
+  height: 100%
+  border-width: 1px
+  border-color: rgba(9, 56, 62, 0.1)
+  -webkit-animation: ellipsesOrbit 15s ease-in-out infinite
+          animation: ellipsesOrbit 15s ease-in-out infinite
+
+.ellipses__outer--thin:after 
+  content: ""
+  background-image: url("../assets/img/dial.png")
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: contain
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  position: absolute
+
+
+.ellipses__outer--thick 
+  width: 100%
+  height: 100%
+  border-color: #09383E transparent
+  border-width: 1.5px
+  -webkit-transform: rotate(-45deg)
+          transform: rotate(-45deg)
+  -webkit-animation: ellipsesRotate 15s ease-in-out infinite
+          animation: ellipsesRotate 15s ease-in-out infinite
+
+
+.ellipses__orbit 
+  width: 2.5rem
+  height: 2.5rem
+  border-width: 2px
+  border-color: #09383E
+  top: -0.20rem
+  right: 6.75rem
+  @media (max-width: 600px)
+      top: -0.80rem
+  @media (max-width: 450px)
+      top: -1.25rem
+  @media (max-width: 350px)
+      top: -1.0rem
+      width: 2rem
+      height: 2rem
+  @media (max-width: 318px)
+      top: 12.80rem
+  @media (max-width: 268px)
+      top: 10rem
+
+.ellipses__orbit:before 
+  content: ''
+  width: 0.7rem
+  height: 0.7rem
+  border-radius: 50%
+  display: inline-block
+  background-color: #09383E
+  margin: 0 auto
+  left: 0
+  right: 0
+  position: absolute
+  top: 50%
+  -webkit-transform: translateY(-50%)
+          transform: translateY(-50%)
+
+
+
+@keyframes ellipsesRotate 
+  0% 
+    -webkit-transform: rotate(-45deg)
+            transform: rotate(-45deg)
+  
+  100% 
+    -webkit-transform: rotate(-405deg)
+            transform: rotate(-405deg)
+
+@keyframes ellipsesOrbit 
+  0% 
+            transform: rotate(0)
+  
+  100%
+            transform: rotate(360deg)
+  
+
+.downit
+    position: absolute
+    top:90vh
+    left: 50%
+    transform: translateY(-50%)
+    color: #09383E
+    animation: arrow 2.5s ease-in-out infinite
+
+@keyframes arrow
+  0% 
+            top: 90vh
+  
+  40% 
+            top: 96vh
+  100%
+            top: 90vh
+
+.ellipses-container .greeting 
+  position: absolute
+  top: 50%
+  left: 50%
+  -ms-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+  margin: 0 auto
+  text-transform: uppercase
+  letter-spacing: 2rem
+  font-size: 2.5rem
+  font-weight: 700
+  opacity: 0.5
+  padding-left: 30px 
+  @media (max-width: 500px)
+    letter-spacing: 1rem
+    font-size: 2rem
+    padding-left: 10px
+  @media (max-width: 350px)
+    letter-spacing: 0.5rem
+    font-size: 2rem
+    padding-left: 10px

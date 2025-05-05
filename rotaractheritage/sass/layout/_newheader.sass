@@ -1,0 +1,124 @@
+.nav-toggle
+  display: block
+  padding: 1em
+  position: fixed
+  left: 10px
+  top: 16px
+  cursor: pointer
+
+.hamburger, .hamburger::before, .hamburger::after
+  content: ''
+  display: block
+  width: 20px
+  height: 2px
+  background: black
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26)
+  transition: all ease-in-out 250ms
+  border-radius: 25px
+
+.hamburger::before
+  transform: translate(-6px,-6px)
+
+.hamburger::after
+  transform: translate(-6px,4px)
+
+.hamburger.is-open
+  transform: rotate(45deg)
+
+  &::after
+    transform: rotate(-90deg) translate(2px)
+
+  &::before
+    opacity: 0
+
+
+.main-nav
+  background: $accent
+  position: absolute
+  top: 0
+  right: 100%
+  left: 0
+  font-size: 1.2em
+  overflow: hidden
+  transition: all ease-in-out 250ms
+  display: none
+  position: fixed
+
+
+
+.new-header-ul
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    text-align: center
+    height: 100vh
+
+
+.new-header-li
+    flex: 1 1 auto
+    border-bottom: 1px solid rgba(0, 0, 0, .15)
+    display: flex
+
+li:last-child
+    margin-right: 0 !important
+
+
+#main-nav-a
+    color: $text-inverse
+    text-decoration: none
+    flex-basis: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: 'Roboto'
+
+    &:hover
+      background: rgba(0, 0, 0, .10)
+
+
+
+&.is-open
+    display: block
+    right:0
+    animation: revea 1s ease-in-out
+@keyframes revea
+    0%
+        display: block
+        right: 100%
+    20%
+        display: block
+        right: 0
+
+.contain-header
+    width: 90%
+    max-width: 1200px
+    margin: 0 auto
+
+.rota-150-logo
+    width: 100vw !important
+    height: 70px
+    position: fixed
+    top: 0
+    margin-left: 30px
+    //background: linear-gradient(to right, #048ca8, #16db93)
+    background: white
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.26)
+    margin: 0 auto  
+    z-index: 99
+    text-align: center
+.rota-150-logo img
+    margin: 0 auto
+    margin-top: 20px
+ 
+
+.grid-header
+    display: flex
+    flex-wrap: wrap
+
+
+.main-header
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  padding-top: 1em

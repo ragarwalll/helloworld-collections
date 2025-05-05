@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    background: #f7f7f7;
+}
+
+.beginner-content{
+    font-weight: normal;
+}

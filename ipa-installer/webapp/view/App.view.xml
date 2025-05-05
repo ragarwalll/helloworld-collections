@@ -1,0 +1,36 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.sap.iOSExternalIPAInstall.controller.App" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}" showHeader="false">
+					<content>
+						<StandardListItem type="Active" title="GuidetoTech" description="v{i18n>version}" icon="logo.png" id="item4"/>
+						<OverflowToolbar width="100%" id="toolbar1"/>
+						<HBox class="sapUiSmallMargin">
+							<items>
+								<Label text="DOWNLOAD"/>
+							</items>
+						</HBox>
+						<StandardListItem type="Navigation" title="Download Application" description="{i18n>desc}" icon="sap-icon://download-from-cloud" id="downloadApp" press="downloadApp"/>
+						<HBox class="sapUiTinyMargin">
+							<items>
+								<Label text="{i18n>appOpen}" wrapping="true"/>
+							</items>
+						</HBox>
+						<OverflowToolbar width="100%" id="toolbar2"/>
+						<HBox class="sapUiSmallMargin">
+							<items>
+								<Label text="APP DETAILS"/>
+							</items>
+						</HBox>
+						<DisplayListItem type="Active" label="Bundle identifier" value="{i18n>identifier}"/>
+						<DisplayListItem type="Active" label="Size" value="{i18n>size}"/>
+						<DisplayListItem type="Active" label="Minimum iOS version" value="{i18n>iOSversion}"/>
+						<DisplayListItem type="Active" label="Device family" value="{i18n>device}"/>
+						<DisplayListItem type="Active" label="Supported architectures" value="{i18n>arch}"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

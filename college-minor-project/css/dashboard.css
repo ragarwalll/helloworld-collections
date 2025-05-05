@@ -1,0 +1,72 @@
+.main-wrapper2{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    height: auto;
+    border-left: 1px solid #DCE5EE;
+    border-right: 1px solid #DCE5EE;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2vw;
+}
+@media screen and (max-width: 674px) {
+.main-wrapper2{
+    width: auto !important;
+}
+}
+
+.level{
+    text-align: left  !important;
+    box-sizing: unset !important;
+    position: relative;
+    padding: 30px 20px 50px 20px;
+    margin: 25px;
+    display: inline-block;
+    height: 100px;
+    width: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    transition: all 150ms ease-in-out;
+}
+.level:hover{
+    transform: scale(1.1);
+    transition: all 150ms ease-in-out;
+}
+.levels{
+    text-align: center;
+}
+@media screen and (max-width: 460px) {
+.level{
+    max-width: 65vw;
+}
+}
+.begin--svg{
+    position: absolute;
+    top: 1.25rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%
+}
+.icon--svg{
+    height: inherit;
+    margin: auto;
+    display: block;
+    color: #ffffff;
+    width: 1.75rem;
+}
+
+.beginner{
+    border-top: 6px solid #69639a;
+
+}
+.intermediate{
+    border-top: 6px solid #4c7ef3;  
+}
+.advanced{
+    border-top: 6px solid #6df0c2;
+}
+#level{
+    all: unset;
+    cursor: pointer;
+    color: rgb(85, 26, 139);
+}

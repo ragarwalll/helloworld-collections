@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+.form{
+    position: relative;
+    width: 450px;
+    min-height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 48px 40px 36px;
+    margin-top: 25px;
+}
+.input{
+    height: 70px;
+    padding: 20px 0;
+}
+.user {
+    outline: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    width: 100%;
+    border-bottom: 1px solid #c0c0c0c0;
+    padding-top: 30px;
+}
+.user::placeholder {
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+.pass {
+    outline: none;
+    border: none;
+    margin: 0 auto;
+    font-size: 18px;
+    width: 100%;
+    border-bottom: 1px solid #c0c0c0c0;
+    padding-top: 30px;
+    transition: all 1.5s linear;
+}
+.pass::placeholder {
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+.new {
+    transform: translateX(0px);
+}
+.usernameplacing::placeholder {
+    opacity: 1;
+    transform: translateY(-30px);
+    color: #1a73e8;
+    font-size: 12px;
+}
+.line, .line1 {
+    border: none;
+    border-top: 1px solid #c0c0c0c0;
+    transform: scale(0.5, 1);
+    transition: transform ease-in-out 200ms;
+    margin-top: -1px;
+}
+.newline {
+    border-top: 2px solid #1a73e8;
+    transform: scale(1, 1);
+    transition: transform ease-in-out 200ms;
+}
+.username {
+    height: 100px;
+    padding: 20px 0;
+}
+.btn{
+    float: right;
+    background-color: #1a73e8;
+    border: none;
+    width: 88px;
+    height: 36px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 50px;
+}
+#area {
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+#log {
+    text-align: center;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+}
+#new-details {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    text-align: center;
+    color: #000;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+@media (max-width: 610px) {
+    .form {
+        box-shadow: none;
+    }
+}
+@media (max-width: 460px) {
+    .form {
+        width: 90%;
+        padding: 10px;
+    }
+}
