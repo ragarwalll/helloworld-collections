@@ -1,1 +1,0 @@
-sap.ui.define(["com/sap/iOSExternalIPAInstall/controller/App.controller"],function(t){"use strict";QUnit.module("App Controller");QUnit.test("I should test the App controller",function(n){var o=new t;o.onInit();n.ok(o)})});
