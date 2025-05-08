@@ -1,10 +1,14 @@
 {
     "resources": [
         {
-            "name": "manifest.json"
+            "name": "controller/App-dbg.controller.js",
+            "isDebug": true
         },
         {
             "name": "model/models.js"
+        },
+        {
+            "name": "manifest.json"
         },
         {
             "name": "controller/App.controller.js"
@@ -20,20 +24,16 @@
             "merged": true
         },
         {
-            "name": "i18n/i18n.properties",
-            "raw": "i18n/i18n.properties"
+            "name": "Component-dbg.js",
+            "isDebug": true
         },
         {
             "name": "model/models-dbg.js",
             "isDebug": true
         },
         {
-            "name": "controller/App-dbg.controller.js",
-            "isDebug": true
-        },
-        {
-            "name": "Component-dbg.js",
-            "isDebug": true
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
         },
         {
             "name": "../../../sap-ui-version.json"
