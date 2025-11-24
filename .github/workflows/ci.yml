@@ -39,7 +39,7 @@ jobs:
     name: Build ${{ matrix.project.name }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up PHP (if needed)
         if: matrix.project.type == 'php'
