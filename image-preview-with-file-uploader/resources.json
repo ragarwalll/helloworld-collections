@@ -4,6 +4,10 @@
             "name": "Component.js"
         },
         {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
             "name": "model/models.js"
         },
         {
@@ -20,15 +24,11 @@
             "merged": true
         },
         {
-            "name": "controller/App-dbg.controller.js",
+            "name": "model/models-dbg.js",
             "isDebug": true
         },
         {
-            "name": "i18n/i18n.properties",
-            "raw": "i18n/i18n.properties"
-        },
-        {
-            "name": "model/models-dbg.js",
+            "name": "controller/App-dbg.controller.js",
             "isDebug": true
         },
         {
